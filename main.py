@@ -4,12 +4,12 @@ import math
 
 # Constants
 WIDTH, HEIGHT = 800, 800
-ENTITY_SIZE = 15
-QUANTITY = 250
-DETECTION_RADIUS = 25
+ENTITY_SIZE = 50
+QUANTITY = 30
+DETECTION_RADIUS = 75
 
 # Boolean to switch between game modes
-SIMPLE_GAME = True
+SIMPLE_GAME = False
 
 # Mapping entity types to image files for both game modes
 IMAGE_FILES = {
@@ -84,7 +84,7 @@ def main():
 
     pygame.init()
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
-    pygame.display.set_caption("Rock Paper Scissors Lizard Spock")
+    pygame.display.set_caption("Rock Paper Scissors (Lizard Spock)")
 
     # Load images
     if SIMPLE_GAME:
@@ -137,7 +137,7 @@ def main():
             screen.blit(entity.image, (int(entity.x), int(entity.y)))
 
         pygame.display.flip()
-        clock.tick(30)
+        clock.tick(60)
 
     pygame.quit()
 
